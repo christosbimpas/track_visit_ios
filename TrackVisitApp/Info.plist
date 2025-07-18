@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key>
+  <string>com.example.TrackVisitApp</string>
+  <key>CFBundleName</key>
+  <string>TrackVisitApp</string>
+  <key>CFBundleVersion</key>
+  <string>1</string>
+  <key>CFBundleShortVersionString</key>
+  <string>1.0</string>
+  <key>UILaunchScreen</key>
+  <dict/>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Your location is needed to track visits.</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Your location is needed to track visits.</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Your location is needed to track visits.</string>
+</dict>
+</plist>
