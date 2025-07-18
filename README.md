@@ -15,3 +15,4 @@ This project demonstrates a minimal SwiftUI application that uses the MVVM + Coo
 ## Running the App
 Open the `TrackVisitApp` folder in Xcode and run on a real device to collect visit data.
 Make sure to grant Always Location permission when prompted.
+
