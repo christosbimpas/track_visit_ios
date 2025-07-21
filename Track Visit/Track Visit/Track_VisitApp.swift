@@ -11,23 +11,23 @@ import CoreLocation
 
 @main
 struct Track_VisitApp: App {
-    var sharedModelContainer: ModelContainer = {
+    let sharedModelContainer: ModelContainer
+
+    @StateObject private var visitTracker: VisitTracker
+
+    init() {
         let schema = Schema([
             Item.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            self.sharedModelContainer = container
+            _visitTracker = StateObject(wrappedValue: VisitTracker(context: container.mainContext))
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
-
-    @StateObject private var visitTracker: VisitTracker
-
-    init() {
-        _visitTracker = StateObject(wrappedValue: VisitTracker(context: sharedModelContainer.mainContext))
     }
 
     var body: some Scene {
