@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import CoreLocation
 
 @main
 struct Track_VisitApp: App {
@@ -23,9 +24,16 @@ struct Track_VisitApp: App {
         }
     }()
 
+    @StateObject private var visitTracker: VisitTracker
+
+    init() {
+        _visitTracker = StateObject(wrappedValue: VisitTracker(context: sharedModelContainer.mainContext))
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(visitTracker)
         }
         .modelContainer(sharedModelContainer)
     }
